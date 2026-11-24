@@ -59,7 +59,7 @@ Run the script using:
 
 ## Roadmap
 
-- [ ] Retrieve Purdue dining hall menu data using `curl`.
+- [x] Retrieve Purdue dining hall menu data using `curl`.
 - [ ] Parse the menu data using `jq`.
 - [ ] Compare menu items against foods in `favorites.txt`.
 - [ ] Send email notifications using `msmtp`.
