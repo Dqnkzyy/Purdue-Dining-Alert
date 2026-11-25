@@ -6,9 +6,9 @@ menu_date=$(date +%F)
 # fetch menu data per dining hall
 for hall in Earhart Ford Hillenbrand Wiley Windsor; do
 
-    # ends script if fails to fetch menu data
-    curl -f "https://api.hfs.purdue.edu/menus/v2/locations/$hall/$menu_date" || exit 1
+    # ends script if fails to fetch menu data, sS clesrs loading bars, f prevents printing HTML errors
+    menu_json=$(curl -fsS "https://api.hfs.purdue.edu/menus/v2/locations/$hall/$menu_date") || exit 1
 
-    # new line after each response
-    printf '\n'
+    # keep dining hall name alongside every menu item
+    printf '%s\n' "$menu_json" | jq -r --arg hall "$hall" '.Meals[].Stations[].Items[].Name | "\($hall) — \(.)"'
 done
