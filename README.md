@@ -60,8 +60,8 @@ Run the script using:
 ## Roadmap
 
 - [x] Retrieve Purdue dining hall menu data using `curl`.
-- [ ] Parse the menu data using `jq`.
-- [ ] Compare menu items against foods in `favorites.txt`.
+- [x] Parse the menu data using `jq`.
+- [x] Compare menu items against foods in `favorites.txt`.
 - [ ] Send email notifications using `msmtp`.
 - [ ] Run the script on a cloud server so it works even when my computer is off.
 - [ ] Use `cron` to automatically run the script daily.
